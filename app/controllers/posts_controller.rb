@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Posts.create(content: params[:content])
+    Post.create(content: params[:content])
     redirect_to action: :index
   end
 
@@ -20,3 +20,8 @@ class PostsController < ApplicationController
     render json: { post: item }
   end
 end
+
+private
+# def posts_params
+#   params.require(:post).permit(:content)
+# end
